@@ -1,3 +1,8 @@
-<div>
-  <a href="#" (click)="toggleState()"><i class="fas fa-bars"></i></a>
+<div (click)="active = !active">
+  <div *ngIf="!active; else elseBlock">
+    <i class="fas fa-bars"></i>
+  </div>
+  <ng-template #elseBlock>
+    <div><i class="far fa-times-circle"></i></div>
+  </ng-template>
 </div>
