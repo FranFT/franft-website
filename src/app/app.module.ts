@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuButtonComponent } from './menu-button/menu-button.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuButtonComponent
+    MenuButtonComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
