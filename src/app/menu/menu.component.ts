@@ -8,13 +8,16 @@ import { MenuService } from '../menu.service';
 })
 export class MenuComponent implements OnInit {
 
+  options = [];
+
   constructor(private _menu_data: MenuService) { }
 
   ngOnInit() {
+    this._menu_data.option.subscribe(res => this.options = res );
   }
 
   // Returns when the menu is open trough the menu service.
-  isActive():boolean {
+  isActive() {
     return this._menu_data.isActive();
   }
 }
