@@ -8,7 +8,7 @@ export class MenuService {
   private is_active: boolean = false;
 
   // Menu options.
-  private options = new BehaviorSubject<any>(['home','contact']);
+  private options = new BehaviorSubject<any>(['home', 'contact', 'projects']);
   option = this.options.asObservable();
 
   constructor() { }
@@ -21,6 +21,24 @@ export class MenuService {
   // Switch menu state variable.
   toogleMenuState() {
     this.is_active = !this.is_active;
+  }
+
+  selectIcon(name) {
+    // Setting menu element icon depending on this.name.
+    switch(name){
+      case 'home': {
+        return 'fas fa-home';
+      }
+      case 'contact':{
+        return 'fas fa-user';
+      }
+      case 'projects':{
+        return 'fas fa-code-branch';
+      }
+      default: {
+        return 'fas fa-exclamation-triangle';
+      }
+    }
   }
 
 }
