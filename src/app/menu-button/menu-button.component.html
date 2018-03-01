@@ -1,9 +1,9 @@
 <div>
-  <div (click)="active = !active" *ngIf="!active; else elseBlock">
+  <div (click)="toggleMenuState()" *ngIf="!isActive(); else elseBlock">
     <i class="fas fa-bars"></i>
   </div>
   <ng-template #elseBlock>
-    <div (click)="active = !active">
+    <div (click)="toggleMenuState()">
       <i class="far fa-times-circle"></i>
     </div>
   </ng-template>
