@@ -1,8 +1,10 @@
-<div (click)="active = !active">
-  <div *ngIf="!active; else elseBlock">
+<div>
+  <div (click)="active = !active" *ngIf="!active; else elseBlock">
     <i class="fas fa-bars"></i>
   </div>
   <ng-template #elseBlock>
-    <div><app-menu></app-menu><i class="far fa-times-circle"></i></div>
+    <div (click)="active = !active">
+      <i class="far fa-times-circle"></i>
+    </div>
   </ng-template>
 </div>
