@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-menu-button',
@@ -6,13 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-button.component.scss']
 })
 export class MenuButtonComponent implements OnInit {
-  active: boolean;
+  //Constructor: Injecting menu service data.
+  constructor( private _menu_data: MenuService ) { }
 
-  //Constructor
-  constructor() { }
+  ngOnInit() {}
 
-  // Component setup
-  ngOnInit() {
-    this.active = false;
+  isActive():boolean {
+    return this._menu_data.isActive();
+  }
+  
+  toggleMenuState() {
+    this._menu_data.toogleMenuState();
   }
 }

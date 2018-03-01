@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _menu_data: MenuService) { }
 
   ngOnInit() {
   }
 
+  // Returns when the menu is open trough the menu service.
+  isActive():boolean {
+    return this._menu_data.isActive();
+  }
 }
