@@ -16,9 +16,18 @@ export class MenuElementComponent implements OnInit {
 
   ngOnInit() { }
 
-  // Returns the icon used for a menu-element depending on
-  // its name using for that 'selectIcon' method from menu service.
+  // Used to close menu when user clicks on a menu-element.
+  toogleMenuState() {
+    this._menu_data.toogleMenuState();
+  }
+
+  // Getting the correct icon class based on this.name from menu.service.
   icon() { 
-    return this._menu_data.selectIcon(this.name);
+    return this._menu_data.getIcon(this.name);
+  }
+
+  // Getting the correct icon class based on this.name from menu.service.
+  path() {
+    return this._menu_data.getPath(this.name);
   }
 }

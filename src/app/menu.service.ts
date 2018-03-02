@@ -23,8 +23,9 @@ export class MenuService {
     this.is_active = !this.is_active;
   }
 
-  selectIcon(name) {
-    // Setting menu element icon depending on this.name.
+  // Used by components through dependency injection.
+  getIcon(name) {
+    // Setting menu element icon depending on its name.
     switch(name){
       case 'home': {
         return 'fas fa-home';
@@ -38,6 +39,17 @@ export class MenuService {
       default: {
         return 'fas fa-exclamation-triangle';
       }
+    }
+  }
+
+  // Used by components through dependency injection.
+  getPath(name) {
+    // Setting menu element path depending on its name.
+    if(name == 'home') {
+      return '';
+    }
+    else {
+      return name;
     }
   }
 
