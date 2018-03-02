@@ -5,9 +5,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Components
+// Components //
+// Core
 import { AppComponent } from './app.component';
+// Sections
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
+
+// Menu
 import { MenuButtonComponent } from './menu-button/menu-button.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuElementComponent } from './menu-element/menu-element.component';
@@ -22,7 +28,9 @@ import { MenuService } from './menu.service';
     HomeComponent,
     MenuButtonComponent,
     MenuComponent,
-    MenuElementComponent
+    MenuElementComponent,
+    ContactComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
