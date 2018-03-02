@@ -1,0 +1,10 @@
+<div>
+  <div (click)="toggleMenuState()" *ngIf="!isActive(); else elseBlock">
+    <i class="fas fa-bars"></i>
+  </div>
+  <ng-template #elseBlock>
+    <div (click)="toggleMenuState()">
+      <i class="far fa-times-circle"></i>
+    </div>
+  </ng-template>
+</div>

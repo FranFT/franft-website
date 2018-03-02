@@ -1,0 +1,5 @@
+<div class="menu" *ngIf="isActive()">
+  <app-menu-element *ngFor="let opt of options" 
+    [name]="opt">
+  </app-menu-element>
+</div>
